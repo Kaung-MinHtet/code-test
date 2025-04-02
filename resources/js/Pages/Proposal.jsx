@@ -73,6 +73,9 @@ const Proposal = ({ formData }) => {
                 setData("adultsInfo", updatedAdultsInfo);
             }
         }
+
+        console.log(!data.acceptTnC && isSubmitting);
+        
     }, []);
 
     return (
@@ -1185,7 +1188,7 @@ const Proposal = ({ formData }) => {
                         </div>
 
                         <div className="flex justify-end items-center my-10">
-                            <button className={`bg-red-700 py-2 px-4 text-white ${(data.acceptTnC || !isSubmitting) ? "" : "cursor-not-allowed opacity-50"}`} disabled={(!data.acceptTnC || isSubmitting)}>
+                            <button className={`bg-red-700 py-2 px-4 text-white ${(data.acceptTnC && !isSubmitting) ? "" : "cursor-not-allowed opacity-50"}`} disabled={(!data.acceptTnC && isSubmitting)}>
                                 Next
                             </button>
                         </div>
