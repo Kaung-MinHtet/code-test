@@ -83,7 +83,7 @@ const Proposal = ({ formData }) => {
             <Head title="Proposal" />
             <WebsiteLayout>
                 <div
-                    className="aspect-[2/1] w-full pt-[150px] px-20"
+                    className="aspect-[2/1] w-full pt-[150px] px-4 lg:px-20"
                     // style={{
                     //     backgroundImage: `url(${HeroImage})`,
                     //     backgroundSize: "cover",
