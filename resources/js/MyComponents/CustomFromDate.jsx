@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
-function CustomFromDate() {
+function CustomFromDate({ data, setData }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
+
+  useEffect(() => {
+    setData("fromDate", selectedDate);
+  }, [selectedDate, setSelectedDate]);
 
   return (
     <div className="relative">

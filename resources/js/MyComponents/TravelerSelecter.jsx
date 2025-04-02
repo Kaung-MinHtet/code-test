@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import CloseIcon from "@mui/icons-material/Close";
 
-function TravelerSelector() {
+function TravelerSelector({ data, setData }) {
     const [isOpen, setIsOpen] = useState(false);
     const [type, setType] = useState("Individual/Group");
     const [adults, setAdults] = useState(1);
@@ -11,8 +11,17 @@ function TravelerSelector() {
     useEffect(() => {
         if(type == "Family") {
             setAdults(2);
+        } else {
+            setAdults(1);
         }
+
+        setData("travellerType", type);
     }, [type, setType]);
+
+    useEffect(() => {
+        setData("adults", adults);
+        setData("children", children);
+    }, [adults, setAdults, children, setChildren]);
 
     return (
         <div className="relative">

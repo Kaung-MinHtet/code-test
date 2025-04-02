@@ -10,7 +10,7 @@ const Navbar = ({ isSidebarOn, setisSidebarOn, setisSidebarTwoOn }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 100) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -22,7 +22,7 @@ const Navbar = ({ isSidebarOn, setisSidebarOn, setisSidebarTwoOn }) => {
     }, []);
 
     return (
-        <div className={`fixed top-0 left-0 w-full z-10 ${scrolled ? 'bg-white' : 'bg-transparent'} flex justify-between items-center gap-8 py-10 px-20`}>
+        <div className={`fixed top-0 left-0 w-full z-10 ${scrolled ? 'bg-white' : 'bg-transparent'} flex justify-between items-center gap-8 py-5 md:py-10 px-20`}>
             <div className="flex justify-around items-center gap-4 text-nowrap xl:gap-10 font-extrabold text-xs xl:text-sm text-gray-700">
                 <a href="" className=" hidden lg:block">INSURANCE PRODUCTS</a>
                 <a href="" className=" hidden lg:block">CLAIMS</a>
