@@ -4,6 +4,7 @@ import MyanmarFlag from "../../images/my_MM.png";
 import EnglishFlag from "../../images/en_US.png";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
+import { router } from "@inertiajs/react";
 
 const Navbar = ({ isSidebarOn, setisSidebarOn, setisSidebarTwoOn }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = ({ isSidebarOn, setisSidebarOn, setisSidebarTwoOn }) => {
                 <a href="" className=" hidden lg:block">INSURANCE PRODUCTS</a>
                 <a href="" className=" hidden lg:block">CLAIMS</a>
                 <a href="" className=" hidden lg:block">MY AYASOMPO</a>
-                <img src={Logo} alt="logo" className="max-w-[180px]" />
+                <img onClick={() => router.get('/')} src={Logo} alt="logo" className="max-w-[180px] cursor-pointer" />
                 <a href="" className=" hidden lg:block">OUR PARTNER</a>
                 <a href="" className=" hidden lg:block">OUR PEOPLE</a>
                 <a href="" className=" hidden lg:block">ABOUT US</a>
